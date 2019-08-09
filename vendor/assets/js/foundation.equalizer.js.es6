@@ -155,6 +155,7 @@ class Equalizer {
    * @private
    */
   _isStacked() {
+    if ([typeof this.$watched[0], typeof this.$watched[1]].includes('undefined')) { return true; }
     return this.$watched[0].getBoundingClientRect().top !== this.$watched[1].getBoundingClientRect().top;
   }
 
